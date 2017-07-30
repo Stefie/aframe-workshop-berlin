@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Materials & Animations</title>
+    <meta name="description" content="Material & Animations">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <!--
+      TASK:
+      Try to create a a world in space.
+      You can find 360 images and other textures in the /assets folder
+    -->
+    <a-scene>
+      <a-assets>
+        <img id="space" src="https://cdn.glitch.com/ba228382-1e08-4b86-81f9-71ef77a6fd93%2Fspace.jpg?1501437954751" />
+        <img id="earth" src="https://cdn.glitch.com/ba228382-1e08-4b86-81f9-71ef77a6fd93%2Fearth.jpg?1501436734331" />
+      </a-assets>
+      <!-- Put your code in here -->
+      <a-sphere position="0 0 -8" color="green" radius="3">
+        <a-animation attribute="rotation" from="0 0 0" to="0 360 0" easing="linear" dur="30000" repeat="indefinite"></a-animation>
+      </a-sphere>
+      <a-sky color="blue"></a-sky>
+    </a-scene>
+  </body>
+</html>
