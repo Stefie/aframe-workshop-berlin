@@ -1,3 +1,62 @@
+/**
+ * Solarized Dark theme for reveal.js.
+ * Author: Achim Staebler
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/league-gothic/league-gothic.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+/**
+ * Solarized colors by Ethan Schoonover
+ */
+html * {
+	color-profile: sRGB;
+	rendering-intent: auto;
+}
+// Solarized colors
+$base3:    #002b36;
+$base2:    lighten(#073642, 7%);
+$base1:    #586e75;
+$base0:    #657b83;
+$base00:     #839496;
+$base01:     #93a1a1;
+$base02:     lighten(#93a1a1, 30%);
+$base03:     lighten(#93a1a1, 37%);
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+// Override theme settings (see ../template/settings.scss)
+$mainColor: $base1;
+$headingColor: $base2;
+$headingTextShadow: none;
+$backgroundColor: $base03;
+$linkColor: $blue;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: $magenta;
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+
 .flex-row {
     display: flex;
     justify-content: center;
@@ -47,7 +106,7 @@
   }
  .slides section .fragment.highlight-white.visible,
  .slides section .highlight-white-permanent {
-	  color: #f2efe6;
+	  color: $base3;
     font-weight: bold;
     &.upper {
       text-transform: uppercase;
