@@ -32,10 +32,10 @@
         <section>
           <h2>A-Frame</h2>
           <h3>Is a javascript framework for building VR experiences on the web.</h3>
-          <ul class="fragment fade-up">
-            <li>It's cross-platform</li>
-            <li>...easy to use</li>
-            <li>and easy to extend</li>
+          <ul>
+            <li class="fragment fade-up">It's cross-platform...</li>
+            <li class="fragment fade-up">easy to use...</li>
+            <li class="fragment fade-up">and easy to extend!</li>
           </ul>
         </section>
         <section>
@@ -113,7 +113,7 @@
             <li>Canvas setup</li>
             <li>Default camera</li>
             <li>Default lightning</li>
-            <li>Initializes scene rednering and re-rendering</li>
+            <li>Initializes scene render loop</li>
           </ul>
           <h2>&lt;/a-scene&gt;</h2>
         </section>
@@ -128,7 +128,8 @@
         <section data-markdown>
           <script type="text/template">
             ## Rendered code example
-            ![Example rendered](lib/img/basic-example.png "Example rendered")
+            <!-- ![Example rendered](lib/img/basic&#45;example.png "Example rendered") -->
+            <iframe allowfullscreen class="stretch" src="embeds/introduction-example.html" frameborder="0" ></iframe>
           </script>
         </section>
         <section>
@@ -136,50 +137,181 @@
           <p>ctrl + alt + i</p>
           <img src="lib/img/aframe-inspector.png" />
         </section>
+
         <section>
           <h2>Geometries</h2>
-          <p>A-Frame primitves</p>
-          <pre><code data-trim >
-             <a-box width="3" height="2"></a-box>
+          <p>A-Frame Built-ins & Geometry</p>
+          <pre><code data-trim class="fragment fade-in">
+          <a-box width="2" height="3"></a-box>
+
+          <a-entity geometry="primitive: box; width: 2; height: 3;"></a-entity>
           </code></pre>
-          <pre><code data-trim >
-             <a-sphere radius="1.5"></a-sphere>
-          </code></pre>
-          <p>A-Frame entities</p>
-          <pre><code data-trim >
-          <a-entity geometry="primitive: box; width: 3; height: 2;">
-          </a-entity>
-          </code></pre>
-          <pre><code data-trim >
-          <a-entity geometry="primitive: sphere; radius: 1.5;">
-          </a-entity>
-          </code></pre>
-        </section>
+
+          <iframe allowfullscreen src="embeds/geometry-1.html" class="stretch"></iframe>
+      </section>
+
         <section>
-          <h2>Materials</h2>
-          <p>A-Frame primitves</p>
-          <pre><code data-trim >
-             <a-box color="red"></a-box>
+          <h2>Materials — Color</h2>
+          <p>A-Frame Built-ins & Geometry</p>
+          <pre><code data-trim class="fragment fade-in">
+          <a-box color="red"></a-box>
+
+          <a-entity material="color: #00F"></a-entity>
           </code></pre>
-          <pre><code data-trim >
-             <a-sphere color="blue"></a-sphere>
-          </code></pre>
-          <p>A-Frame entities</p>
-          <pre><code data-trim >
-          <a-entity geometry="primitive: box;" material="color: #ff000;">
-          </a-entity>
-          </code></pre>
-          <pre><code data-trim >
-          <a-entity geometry="primitive: sphere;" material="color: blue;">
-          </a-entity>
-          </code></pre>
+
+          <iframe allowfullscreen src="embeds/geometry-1.html" class="stretch"></iframe>
+      </section>
+
+
+          <!-- <a&#45;box color="red" position="&#45;2 0 0"></a&#45;box> -->
+          <!--  -->
+          <!-- <a&#45;entity position="2 0 0" material="color: blue"></a&#45;entity> -->
+
+      <section>
+          <h2>A Brief Note: Components!</h2>
+
+          <p class="fragment fade-out" data-markdown>See a pattern?</p>
+
+          <div class="fragment fade-up">
+              <p>A-Frame is built on the concept of components: </p>
+              <p class="fragment fade-up" data-markdown>Javascript that hooks into the component lifecycle (`init`, `tick`, `remove`, etc.).</p>
+              <p class="fragment fade-up" data-markdown>Allows you to define more complicated behavior to make custom interactions, materials, & more!</p>
+          </div>
+
+          <aside class="notes">
+
+              <!--  TODO : Maybe present a later mini-lesson on making
+              components because that's p essential to understanding the
+              A-Frame ecosystem! -->
+
+              You're probably beginning to notice a pattern here — there's a
+              convenient built-in syntax and then the underlying A-Frame code.
+
+              You can make your own contenience syntax patterns, by making
+              your own A-Frame components! For example, we can make a color
+              component using the following:
+
+              <code>
+                  AFRAME.registerComponent('my-color', {
+                  schema : {
+                  color : {default : '#DDAADD'}
+                  },
+                  init : function () {
+                  console.log(this.el.setAttribute('material', 'color', this.data.color))
+                  }
+                  });
+              </code>
+          </aside>
         </section>
+
+
+            <a-entity geometry="primitive: box; width: 2; height: 3;" position="2 0 0" material="color: #00F"></a-entity>
+            <a-entity geometry="primitive: box; width: 2; height: 3;" position="2 0 0" material="color: blue" my-color="color: papayawhip"></a-entity>
+            <section>
+                <h2>A Tiny Component</h2>
+
+                <pre><code data-trim class="fragment fade-up">
+          AFRAME.registerComponent('my-color', {
+          </code></pre>
+                <pre><code data-trim class="fragment fade-up">
+              schema : {
+          </code></pre>
+          <pre><code data-trim class="fragment fade-up">
+                color : { default : '#DDAADD' }
+          </code></pre>
+          <pre><code data-trim class="fragment fade-up">
+              },
+          </code></pre>
+          <pre><code data-trim class="fragment fade-up">
+              init : function () {
+          </code></pre>
+          <pre><code data-trim class="fragment fade-up">
+                  this.el.setAttribute('material', 'color', this.data.color)}});
+          </code></pre>
+
+          <pre><code data-trim class="fragment fade-up">
+          <a-box my-color ></a-box>
+          <a-box my-color="#BAE"></a-box>
+          </code></pre>
+
+          <aside class="notes">
+
+              <!--  TODO : Maybe present a later mini-lesson on making
+              components because that's p essential to understanding the
+              A-Frame ecosystem! -->
+
+              You're probably beginning to notice a pattern here — there's a
+              convenient built-in syntax and then the underlying A-Frame code.
+
+              You can make your own contenience syntax patterns, by making
+              your own A-Frame components! For example, we can make a color
+              component using the following:
+
+              <code>
+                  AFRAME.registerComponent('my-color', {
+                  schema : {
+                  color : {default : '#DDAADD'}
+                  },
+                  init : function () {
+                  console.log(this.el.setAttribute('material', 'color', this.data.color))
+                  }
+                  });
+              </code>
+          </aside>
+      </section>
+
+      <section>
+          <h2 data-markdown>`my-color`</h2>
+
+          <pre><code>
+          <a-box my-color ></a-box>
+
+          <a-entity my-color="color: burlywood"></a-entity>
+          </code></pre>
+
+          <iframe allowfullscreen src="embeds/component-example.html" class="stretch"></iframe>
+      </section>
+
         <section>
           <h2>Positioning &amp; Rotation</h2>
-          <p> // right-handed - explain axes</p>
-          <p> // Default position is always "0 0 0" (x y z)</p>
-          <p> // Position is relative to a-scene or the parent-element.</p>
+          <p data-markdown>
+              - right ↔ left : `x`
+              - up ↔ down: `y`
+              - forward ↔ backward: `z`, </p>
+          <figure>
+              <img src="images/axes-illustration.jpg" height="350vh" width="auto">
+              <figcaption><a href="https://d2haqc5836ials.cloudfront.net/live/hd/554_figure2.jpg?1460732805">(source)</a>
+<figcaption></figcaption>
+          </figure>
         </section>
+
+<section>
+          <h2>Positioning &amp; Rotation</h2>
+          <p data-markdown>
+              #### Some other things to know:
+
+              - default position for entities is "`0 0 0`"
+              - the default camera position is "`0 1.6 0`"
+              - Position is relative to a-scene or to the parent element
+          </p>
+          <pre><code>
+          <a-entity position="1 2 3" rotation="90 0 30" ></a-box>
+          </code></pre>
+        </section>
+
+        <section>
+            <h3>Positioning &amp; Rotation</h3>
+            <h6>(nested (positioning))</h6>
+
+          <!-- <iframe allowfullscreen src="embeds/component&#45;example.html" class="stretch"></iframe> -->
+          <pre><code>
+        <a-box color="red"  position="-2 0 0">
+            <a-entity position="0 4 0" rotation="0 90 0"></a-entity>
+        </a-box>
+          </code></pre>
+            <iframe allowfullscreen src="embeds/nested-position-example.html" class="stretch"></iframe>
+        </section>
+
         <section data-markdown>
           <script type="text/template">
             ## 3 easy ways to loose your objects in 3D
@@ -198,7 +330,14 @@
         </section>
         <section>
           <h2>Animations</h2>
-          <p> // explanation</p>
+          <pre class="fragment fade-up"><code >
+          <a-animation attribute="position " dur="3000" to="1 0 0" repeat="indefinite" easing="linear" direction="alternate"></a-animation>
+          </code></pre>
+          <pre style="word-wrap: break-word"><code  class="fragment fade-up stretch">
+          <a-animation attribute="position " dur="3000" to="1 0 0" repeat="indefinite" easing="linear" direction="alternate"></a-animation>
+          </code></pre>
+
+          <iframe allowfullscreen src="embeds/animation-example.html" class="stretch"></iframe>
         </section>
         <section data-markdown>
           <script type="text/template">
