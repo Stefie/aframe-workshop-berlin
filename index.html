@@ -30,33 +30,12 @@
           <p>An introduction to WebVR</p>
         </section>
         <section>
-          <h2>A-Frame</h2>
-          <h3>Is a javascript framework for building VR experiences on the web.</h3>
-          <ul class="fragment fade-up">
-            <li>It's cross-platform</li>
-            <li>...easy to use</li>
-            <li>and easy to extend</li>
-          </ul>
-        </section>
-        <section>
-          <h1>WebVR API</h1>
+          <h2>WebVR API</h2>
           <ul>
             <li>Detect VR devices and query their capabilities</li>
             <li>Check if the device supports the presentation mode</li>
             <li>Poll the device’s position and orientation</li>
             <li>Display and re-render imagery on the device</li>
-          </ul>
-        </section>
-        <section>
-          <h1>Other Browser API's</h1>
-          <ul>
-            <li>WebVR API</li>
-            <li>WebGL API</li>
-            <li>Gamepad API</li>
-            <li>WebAudio API</li>
-            <li>WebRTC API</li>
-            <li>Geolocation API</li>
-            <li>and more...</li>
           </ul>
         </section>
         <section>
@@ -99,23 +78,72 @@
           </div>
         </section>
         <section>
+          <h2>Other Browser API's involved</h2>
+          <div class="flex-row flex-space ">
+            <ul>
+              <li>WebVR API</li>
+              <li>WebGL API</li>
+              <li>Gamepad API</li>
+            </ul>
+            <ul>
+              <li>WebAudio API</li>
+              <li>WebRTC API</li>
+              <li>Geolocation API</li>
+            </ul>
+          </div>
+          <p>and more...</p>
+        </section>
+        <section>
+          <h2>A-Frame</h2>
+          <h3>Is a javascript framework for building VR experiences on the web.</h3>
+          <ul class="fragment fade-up">
+            <li>It's cross-platform</li>
+            <li>...easy to use</li>
+            <li>and easy to extend</li>
+          </ul>
+        </section>
+        <section>
           <iframe allowfullscreen class="stretch" src="lib/scenes/test.html" width="100%" height="400px"></iframe>
         </section>
         <section>
-          <p> // entity component system</p>
-          <p> // primitives</p>
+          <h2>Entity-Component-System</h2>
+          <p><span class="highlight-white-permanent">Entity</span> is an empty container <code>&lt;a-entity&gt;</code></p>
+          <p><span class="highlight-white-permanent">Components</span> add a certain apperance, behaviour and/or functionality</p>
+          <br />
+          <pre><code data-trim >
+            Entity Box = Geometry + Material + Position
+
+            Entity Ball = Geometry + Material + Position + Velocity + Physics
+          </code></pre>
         </section>
         <section>
           <h2>&lt;a-scene&gt;</h2>
-          <p>Basic setup of repetitive tasks &amp; components needed</p>
+          <p>Setup of repetitive tasks &amp; components needed</p>
           <ul class="fragment fade-up">
-            <li>WebGL setup</li>
+            <li>WebGL &amp; WebVR setup</li>
             <li>Canvas setup</li>
-            <li>Default camera</li>
-            <li>Default lightning</li>
+            <li>Default camera &amp; lightning</li>
             <li>Initializes scene rednering and re-rendering</li>
+            <li>It loads three.js and webvr-polyfill.js</li>
           </ul>
-          <h2>&lt;/a-scene&gt;</h2>
+          <br />
+          <h2 style="padding-top: 30px;">&lt;/a-scene&gt;</h2>
+        </section>
+        <section>
+          <h2>Entities, components and primitives</h2>
+          <p>Entities and components</p>
+          <pre><code data-trim >
+            <a-entity component1="attribute: value" component2="attribute: value">
+            </a-entity>
+
+            <!-- adding a box -->
+            <a-entity geometry="primitive: box" material="color:red"></a-entity>
+          </code></pre>
+          <p>Primitives</p>
+          <pre><code data-trim >
+            <!-- adding a box as a primitive -->
+            <a-box color="red"></a-box>
+          </code></pre>
         </section>
         <section data-markdown>
           <script type="text/template">
@@ -125,11 +153,10 @@
             Go to http://aframe.io/docs
           </script>
         </section>
-        <section data-markdown>
-          <script type="text/template">
-            ## Rendered code example
-            ![Example rendered](lib/img/basic-example.png "Example rendered")
-          </script>
+        <section>
+          <h1>Go to</h1>
+          <h3 class="lowercase">https://aframe.glitch.me</h3>
+          <p>And remix the project</p>
         </section>
         <section>
           <h2>A-Frame inspector</h2>
@@ -137,48 +164,74 @@
           <img src="lib/img/aframe-inspector.png" />
         </section>
         <section>
-          <h2>Geometries</h2>
-          <p>A-Frame primitves</p>
+          <h2>Geometry component</h2>
+          <p class="highlight-white-permanent upper">It provides a basic shape for an entity</p>
           <pre><code data-trim >
-             <a-box width="3" height="2"></a-box>
-          </code></pre>
-          <pre><code data-trim >
-             <a-sphere radius="1.5"></a-sphere>
-          </code></pre>
-          <p>A-Frame entities</p>
-          <pre><code data-trim >
-          <a-entity geometry="primitive: box; width: 3; height: 2;">
+          <!-- A-Frame entities -->
+          <a-entity geometry="primitive: box; width: 3; height: 2">
+          </a-entity>
+
+          <a-entity geometry="primitive: sphere; radius: 1.5">
           </a-entity>
           </code></pre>
+
           <pre><code data-trim >
-          <a-entity geometry="primitive: sphere; radius: 1.5;">
-          </a-entity>
+          <!-- A-Frame primitives -->
+          <a-box width="3" height="2"></a-box>
+
+          <a-sphere radius="1.5"></a-sphere>
           </code></pre>
         </section>
         <section>
-          <h2>Materials</h2>
-          <p>A-Frame primitves</p>
+          <h2>Material component</h2>
+          <p class="highlight-white-permanent upper">It gives appearance to an entity</p>
           <pre><code data-trim >
-             <a-box color="red"></a-box>
+            <!-- A-Frame entities -->
+            <a-entity geometry="primitive: box" material="color: #ff000">
+            </a-entity>
+
+            <a-entity
+              geometry="primitive: sphere"
+              material="color: blue: opacity: 0.5">
+            </a-entity>
           </code></pre>
+
           <pre><code data-trim >
-             <a-sphere color="blue"></a-sphere>
-          </code></pre>
-          <p>A-Frame entities</p>
-          <pre><code data-trim >
-          <a-entity geometry="primitive: box;" material="color: #ff000;">
-          </a-entity>
-          </code></pre>
-          <pre><code data-trim >
-          <a-entity geometry="primitive: sphere;" material="color: blue;">
-          </a-entity>
+            <!-- A-Frame primitives -->
+            <a-box color="#ff000"></a-box>
+
+            <a-sphere color="blue" opacity="0.5"></a-sphere>
           </code></pre>
         </section>
         <section>
           <h2>Positioning &amp; Rotation</h2>
-          <p> // right-handed - explain axes</p>
-          <p> // Default position is always "0 0 0" (x y z)</p>
-          <p> // Position is relative to a-scene or the parent-element.</p>
+          <p>Right-handed coordinate system</p>
+          <img src="./lib/img/right-handed.jpg" />
+          <div><small>Image from http://what-when-how.com/</small></div>
+        </section>
+        <section>
+          <h2>Position component</h2>
+          <img src="./lib/img/position.png" />
+          <div><small>Image from <a href="https://commons.wikimedia.org/wiki/File:3D_coordinate_system.svg" target="blank">Wikimedia Commons</a></small></div>
+        </section>
+        <section>
+          <h2>Position component</h2>
+          <p class="highlight-white-permanent upper">It places entities at certain spots in 3D space</p>
+
+          <p>Position is relative to &lt;a-scene&gt; or the parent-element.</p>
+          <pre><code data-trim>
+            <!-- How to use it -->
+            <a-box position="2 1 -5" color="red"></a-box>
+
+            <a-sphere position="0 0 -5" color="white" radius="2">
+              <a-sphere position="0 3 0" color="white" radius="1"></a-sphere>
+            </a-sphere>
+          </code></pre>
+        </section>
+        <section>
+          <h2>Rotation component</h2>
+          <p class="highlight-white-permanent upper">It defines the orientation of an entity</p>
+          <img src="./lib/img/rotation.png" />
         </section>
         <section data-markdown>
           <script type="text/template">
@@ -207,6 +260,14 @@
             - equirectangular images
             - Texture/ Tiles
             ![power of 2 error](lib/img/error-powerof2.png "power of 2 error")
+            <p>2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096</p>
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Assets and mixins
+            -
+            -
           </script>
         </section>
         <section data-markdown>
@@ -255,6 +316,16 @@
           <h2>Interactions</h2>
           <p> // info different controllers</p>
           <p> // example with look-controls</p>
+        </section>
+        <section>
+          <h2>Further reading</h2>
+          <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on ressources</a></p>
+          <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on ressources</a></p>
+        </section>
+        <section>
+          <h2>Ressouces</h2>
+          <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on ressources</a></p>
+          <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on ressources</a></p>
         </section>
       </div>
     </div>
