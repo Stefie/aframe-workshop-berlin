@@ -1,0 +1,104 @@
+// Component stuff
+          <h2>Geometries</h2>
+          <p>A-Frame Built-ins & Geometry</p>
+          <pre><code data-trim class="fragment fade-in">
+          <a-box width="2" height="3"></a-box>
+
+          <a-entity geometry="primitive: box; width: 2; height: 3;"></a-entity>
+          </code></pre>
+
+          <iframe allowfullscreen src="embeds/geometry-1.html" class="stretch"></iframe>
+      </section>
+
+        <section>
+          <h2>Materials — Color</h2>
+          <p>A-Frame Built-ins & Geometry</p>
+          <pre><code data-trim class="fragment fade-in">
+          <a-box color="red"></a-box>
+
+          <a-entity material="color: #00F"></a-entity>
+          </code></pre>
+
+          <iframe allowfullscreen src="embeds/geometry-1.html" class="stretch"></iframe>
+      </section>
+
+
+          <!-- <a&#45;box color="red" position="&#45;2 0 0"></a&#45;box> -->
+          <!--  -->
+          <!-- <a&#45;entity position="2 0 0" material="color: blue"></a&#45;entity> -->
+
+      <section>
+          <h2>A Brief Note: Components!</h2>
+
+          <p class="fragment fade-out" data-markdown>See a pattern?</p>
+
+          <div class="fragment fade-up">
+              <p>A-Frame is built on the concept of components: </p>
+              <p class="fragment fade-up" data-markdown>Javascript that hooks into the component lifecycle (`init`, `tick`, `remove`, etc.).</p>
+              <p class="fragment fade-up" data-markdown>Allows you to define more complicated behavior to make custom interactions, materials, & more!</p>
+          </div>
+
+          <aside class="notes">
+
+              <!--  TODO : Maybe present a later mini-lesson on making
+              components because that's p essential to understanding the
+              A-Frame ecosystem! -->
+
+              You're probably beginning to notice a pattern here — there's a
+              convenient built-in syntax and then the underlying A-Frame code.
+
+              You can make your own contenience syntax patterns, by making
+              your own A-Frame components! For example, we can make a color
+              component using the following:
+
+              <code>
+                  AFRAME.registerComponent('my-color', {
+                  schema : {
+                  color : {default : '#DDAADD'}
+                  },
+                  init : function () {
+                  console.log(this.el.setAttribute('material', 'color', this.data.color))
+                  }
+                  });
+              </code>
+          </aside>
+        </section>
+
+
+            <a-entity geometry="primitive: box; width: 2; height: 3;" position="2 0 0" material="color: #00F"></a-entity>
+            <a-entity geometry="primitive: box; width: 2; height: 3;" position="2 0 0" material="color: blue" my-color="color: papayawhip"></a-entity>
+            <section>
+                <h2>A Tiny Component</h2>
+
+                <pre><code data-trim class="fragment fade-up">
+          AFRAME.registerComponent('my-color', {
+          </code></pre>
+                <pre><code data-trim class="fragment fade-up">
+              schema : {
+          </code></pre>
+          <pre><code data-trim class="fragment fade-up">
+                color : { default : '#DDAADD' }
+          </code></pre>
+          <pre><code data-trim class="fragment fade-up">
+              },
+          </code></pre>
+          <pre><code data-trim class="fragment fade-up">
+              init : function () {
+          </code></pre>
+          <pre><code data-trim class="fragment fade-up">
+                  this.el.setAttribute('material', 'color', this.data.color)}});
+
+// Axes stuff
+
+
+<<<<<<< HEAD
+          <p data-markdown>
+              - right ↔ left : `x`
+              - up ↔ down: `y`
+              - forward ↔ backward: `z`, </p>
+          <figure>
+              <img src="images/axes-illustration.jpg" height="350vh" width="auto">
+              <figcaption><a href="https://d2haqc5836ials.cloudfront.net/live/hd/554_figure2.jpg?1460732805">(source)</a>
+<figcaption></figcaption>
+          </figure>
+=======
