@@ -16,10 +16,12 @@
         You can find 360 images and other textures in the /assets folder
         -->
         <a-scene vr-mode-ui="enabled: false">
-            <a-box width="2" height="3" wireframe="true" wireframe-linewidth="3" position="-2 0 0"></a-box>
-            <a-entity geometry="primitive: box; width: 2; height: 3;" position="2 0 0" material="wireframe:true; wireframeLinewidth: 3"></a-entity>
+
+            <a-box width="2" height="3" color="red" position="-2 0 0"></a-box>
+            <a-entity geometry="primitive: box; width: 2; height: 3;" position="2 0 0" material="color: #00F"></a-entity>
             <a-entity id="floor" mixin="floor-mixin"></a-entity>
-            <a-sky color="#1f7874"></a-sky>
+
+            <a-sky color="#2EAFAC"></a-sky>
             <a-camera position="0 0 4"></a-camera>
         </a-scene>
   </body>
