@@ -230,7 +230,7 @@
               - the default camera position is "`0 1.6 0`"
               - Position is relative to a-scene or to the parent element
           </p>
-          <pre><code>
+          <pre><code data-trim>
           <a-entity position="1 2 3" rotation="90 0 30" ></a-box>
           </code></pre>
         </section>
@@ -240,7 +240,7 @@
             <h6>(nested (positioning))</h6>
 
           <!-- <iframe allowfullscreen src="embeds/component&#45;example.html" class="stretch"></iframe> -->
-          <pre><code>
+          <pre><code data-trim>
         <a-box color="red"  position="-2 0 0">
             <a-entity position="0 4 0" rotation="0 90 0"></a-entity>
         </a-box>
@@ -257,13 +257,14 @@
         </section>
         <section>
           <h2>Animations</h2>
-          <pre class="fragment fade-up"><code >
-          <a-animation attribute="position " dur="3000" to="1 0 0" repeat="indefinite" easing="linear" direction="alternate"></a-animation>
-          </code></pre>
-          <pre style="word-wrap: break-word"><code  class="fragment fade-up stretch">
-          <a-animation attribute="position " dur="3000" to="1 0 0" repeat="indefinite" easing="linear" direction="alternate"></a-animation>
-          </code></pre>
-
+          <div class="flex-container flex-half">
+            <div>
+            <img src="./lib/img/animation-position.png" class="fragment fade-up">
+            </div>
+            <div>
+            <img src="./lib/img/animation-rotation.png" class="fragment fade-up">
+          </div>
+          </div>
           <iframe allowfullscreen src="embeds/animation-example.html" class="stretch"></iframe>
       </section>
       <section data-markdown>
@@ -359,7 +360,7 @@
       <section>
           <h2 data-markdown>`my-color`</h2>
 
-          <pre><code>
+          <pre><code data-trim>
           <a-box my-color ></a-box>
 
           <a-entity my-color="color: burlywood"></a-entity>

@@ -70,7 +70,20 @@ $selectionBackgroundColor: $magenta;
       justify-content: space-around;
     }
   }
-
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  &.flex-half {
+    > * {
+      width: 40%;
+    }
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
 .image-icons {
   font-size: 22px;
   > div {
