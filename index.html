@@ -102,9 +102,7 @@
             <li class="fragment fade-up">and easy to extend!</li>
           </ul>
         </section>
-        <section>
-          <iframe allowfullscreen class="stretch" src="lib/scenes/test.html" width="100%" height="400px"></iframe>
-        </section>
+
         <section>
           <h2>Entity-Component-System</h2>
           <p><span class="highlight-white-permanent">Entity</span> is an empty container <code>&lt;a-entity&gt;</code></p>
@@ -170,55 +168,9 @@
           <img src="lib/img/aframe-inspector.png" />
         </section>
 
-        <section>
-          <h2>Geometry component</h2>
-          <p class="highlight-white-permanent upper">It provides a basic shape for an entity</p>
-          <pre><code data-trim >
-          <!-- A-Frame entities -->
-          <a-entity geometry="primitive: box; width: 3; height: 2">
-          </a-entity>
-
-          <a-entity geometry="primitive: sphere; radius: 1.5">
-          </a-entity>
-          </code></pre>
-
-          <pre><code data-trim >
-          <!-- A-Frame primitives -->
-          <a-box width="3" height="2"></a-box>
-
-          <a-sphere radius="1.5"></a-sphere>
-          </code></pre>
-        </section>
-        <section>
-          <h2>Material component</h2>
-          <p class="highlight-white-permanent upper">It gives appearance to an entity</p>
-          <pre><code data-trim >
-            <!-- A-Frame entities -->
-            <a-entity geometry="primitive: box" material="color: #ff000">
-            </a-entity>
-
-            <a-entity
-              geometry="primitive: sphere"
-              material="color: blue: opacity: 0.5">
-            </a-entity>
-          </code></pre>
-
-          <pre><code data-trim >
-            <!-- A-Frame primitives -->
-            <a-box color="#ff000"></a-box>
-
-            <a-sphere color="blue" opacity="0.5"></a-sphere>
-          </code></pre>
-
-          <pre><code data-trim class="fragment fade-up">
-          <a-box my-color ></a-box>
-          <a-box my-color="#BAE"></a-box>
-          </code></pre>
-      </section>
-
       <section>
           <h2>Geometries</h2>
-          <p>A-Frame Built-ins & Geometry</p>
+          <p class="highlight-white-permanent upper">It provides a basic shape for an entity</p>
           <pre><code data-trim class="fragment fade-in">
           <a-box width="2" height="3"></a-box>
 
@@ -231,7 +183,7 @@
 
       <section>
           <h2>Materials — Color</h2>
-          <p>A-Frame Built-ins & Geometry</p>
+          <p class="highlight-white-permanent upper">It gives appearance to an entity</p>
           <pre><code data-trim class="fragment fade-in">
           <a-box color="red"></a-box>
 
@@ -239,82 +191,6 @@
           </code></pre>
 
           <iframe allowfullscreen src="embeds/geometry-1.html" class="stretch"></iframe>
-      </section>
-
-
-      <section>
-          <h2>A Brief Note: Components!</h2>
-
-          <p class="fragment fade-out" data-markdown>See a pattern?</p>
-
-          <div class="fragment fade-up">
-              <p>A-Frame is built on the concept of components: </p>
-              <p class="fragment fade-up" data-markdown>Javascript that hooks into the component lifecycle (`init`, `tick`, `remove`, etc.).</p>
-              <p class="fragment fade-up" data-markdown>Allows you to define more complicated behavior to make custom interactions, materials, & more!</p>
-          </div>
-
-          <aside class="notes">
-
-              <!--  TODO : Maybe present a later mini-lesson on making
-              components because that's p essential to understanding the
-              A-Frame ecosystem! -->
-
-              You're probably beginning to notice a pattern here — there's a
-              convenient built-in syntax and then the underlying A-Frame code.
-
-              You can make your own contenience syntax patterns, by making
-              your own A-Frame components! For example, we can make a color
-              component using the following:
-
-              <code>
-                  AFRAME.registerComponent('my-color', {
-                  schema : {
-                  color : {default : '#DDAADD'}
-                  },
-                  init : function () {
-                  console.log(this.el.setAttribute('material', 'color', this.data.color))
-                  }
-                  });
-              </code>
-          </aside>
-        </section>
-
-
-            <a-entity geometry="primitive: box; width: 2; height: 3;" position="2 0 0" material="color: #00F"></a-entity>
-            <a-entity geometry="primitive: box; width: 2; height: 3;" position="2 0 0" material="color: blue" my-color="color: papayawhip"></a-entity>
-            <section>
-                <h2>A Tiny Component</h2>
-
-                <pre><code data-trim class="fragment fade-up">
-          AFRAME.registerComponent('my-color', {
-          </code></pre>
-                <pre><code data-trim class="fragment fade-up">
-              schema : {
-          </code></pre>
-          <pre><code data-trim class="fragment fade-up">
-                color : { default : '#DDAADD' }
-          </code></pre>
-          <pre><code data-trim class="fragment fade-up">
-              },
-          </code></pre>
-          <pre><code data-trim class="fragment fade-up">
-              init : function () {
-          </code></pre>
-          <pre><code data-trim class="fragment fade-up">
-                  this.el.setAttribute('material', 'color', this.data.color)}});
-          </code></pre>
-        </section>
-
-      <section>
-          <h2 data-markdown>`my-color`</h2>
-
-          <pre><code>
-          <a-box my-color ></a-box>
-
-          <a-entity my-color="color: burlywood"></a-entity>
-          </code></pre>
-
-          <iframe allowfullscreen src="embeds/component-example.html" class="stretch"></iframe>
       </section>
 
         <section>
@@ -401,56 +277,111 @@
           </code></pre>
 
           <iframe allowfullscreen src="embeds/animation-example.html" class="stretch"></iframe>
-        </section>
-        <section data-markdown>
+      </section>
+      <section data-markdown>
           <script type="text/template">
-            ## Images and Videos as material
-            - 360 videos
-            - equirectangular images
-            - Texture/ Tiles
-            ![power of 2 error](lib/img/error-powerof2.png "power of 2 error")
-            <p>2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096</p>
+              ## Images and Videos as material
+              - 360 videos
+              - equirectangular images
+              - Texture/ Tiles
+              ![power of 2 error](lib/img/error-powerof2.png "power of 2 error")
+              <p>2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096</p>
           </script>
-        </section>
-        <section data-markdown>
+      </section>
+      <section data-markdown>
           <script type="text/template">
-            ## Assets and mixins
-            -
-            -
+              ## Assets and mixins
+              -
+              -
           </script>
-        </section>
-        <section data-markdown>
+      </section>
+      <section data-markdown>
           <script type="text/template">
-            ## Importing 3D objects
-            - 3D objects (.obj or .gltf)
-            - scaling problems
+              ## Importing 3D objects
+              - 3D objects (.obj or .gltf)
+              - scaling problems
           </script>
-        </section>
-        <section data-markdown>
+      </section>
+      <section data-markdown>
           <script type="text/template">
-            ## Lesson 2
-            Go to:
-            ### https://berlin-aframe-workshop.glitch.me
-            Open lessons/lesson-2.html
+              ## Lesson 2
+              Go to:
+              ### https://berlin-aframe-workshop.glitch.me
+              Open lessons/lesson-2.html
           </script>
-        </section>
-        <section>
+      </section>
+      <section>
           <h2>Using built-in components</h2>
           <ul>
-            <li>included in a-frame.js</li>
-            <li>see A-Frame docs</li>
-            <li>// examples</li>
+              <li>included in a-frame.js</li>
+              <li>see A-Frame docs</li>
+              <li>// examples</li>
           </ul>
-        </section>
-        <section>
+      </section>
+      <section>
           <h2>Using community components</h2>
           <ul>
-            <li>Include in html-header via script-tag</li>
-            <li>Or install with npm install component-name</li>
-            <li>See github pages fo usage</li>
+              <li>Include in html-header via script-tag</li>
+              <li>Or install with npm install component-name</li>
+              <li>See github pages fo usage</li>
           </ul>
-        </section>
-        <section>
+      </section>
+
+      <section>
+          <h2>A Brief Note: Components!</h2>
+
+          <p class="fragment fade-out" data-markdown>See a pattern?</p>
+
+          <div class="fragment fade-up">
+              <p>A-Frame is built on the concept of components: </p>
+              <p class="fragment fade-up" data-markdown>Javascript that hooks into the component lifecycle (`init`, `tick`, `remove`, etc.).</p>
+              <p class="fragment fade-up" data-markdown>Allows you to define more complicated behavior to make custom interactions, materials, & more!</p>
+          </div>
+
+          <aside class="notes"></aside>
+      </section>
+
+
+      <section>
+          <a-entity geometry="primitive: box; width: 2; height: 3;" position="2 0 0" material="color: #00F"></a-entity>
+          <a-entity geometry="primitive: box; width: 2; height: 3;" position="2 0 0" material="color: blue" my-color="color: papayawhip"></a-entity>
+          <section>
+              <h2>A Tiny Component</h2>
+
+              <pre><code data-trim class="fragment fade-up">
+          AFRAME.registerComponent('my-color', {
+          </code></pre>
+              <pre><code data-trim class="fragment fade-up">
+              schema : {
+          </code></pre>
+          <pre><code data-trim class="fragment fade-up">
+                color : { default : '#DDAADD' }
+          </code></pre>
+          <pre><code data-trim class="fragment fade-up">
+              },
+          </code></pre>
+          <pre><code data-trim class="fragment fade-up">
+              init : function () {
+          </code></pre>
+          <pre><code data-trim class="fragment fade-up">
+                  this.el.setAttribute('material', 'color', this.data.color)}});
+          </code></pre>
+      </section>
+
+      <section>
+          <h2 data-markdown>`my-color`</h2>
+
+          <pre><code>
+          <a-box my-color ></a-box>
+
+          <a-entity my-color="color: burlywood"></a-entity>
+          </code></pre>
+
+          <iframe allowfullscreen src="embeds/component-example.html" class="stretch"></iframe>
+      </section>
+
+
+      <section>
           <h2>Writing a component</h2>
           <pre><code data-trim>
           AFRAME.registerComponent('log', {
@@ -460,41 +391,41 @@
             // show simple example
           });
           </code></pre>
-        </section>
-        <section>
+      </section>
+      <section>
           <h2>Interactions</h2>
           <p> // info different controllers</p>
           <p> // example with look-controls</p>
-        </section>
-        <section>
+      </section>
+      <section>
           <h2>Further reading</h2>
           <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on resources</a></p>
           <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on rssources</a></p>
-        </section>
-        <section>
+      </section>
+      <section>
           <h2>Ressouces</h2>
           <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on resources</a></p>
           <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on resources</a></p>
-        </section>
-      </div>
+      </section>
+  </div>
     </div>
 
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
 
     <script>
-      // More info about config & dependencies:
-      // - https://github.com/hakimel/reveal.js#configuration
-      // - https://github.com/hakimel/reveal.js#dependencies
-      Reveal.initialize({
+        // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
         history: true,
         dependencies: [
-          { src: 'plugin/markdown/marked.js' },
-          { src: 'plugin/markdown/markdown.js' },
-          { src: 'plugin/notes/notes.js', async: true },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+            { src: 'plugin/markdown/marked.js' },
+            { src: 'plugin/markdown/markdown.js' },
+            { src: 'plugin/notes/notes.js', async: true },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ]
-      });
+    });
     </script>
-  </body>
+</body>
 </html>
