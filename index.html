@@ -79,6 +79,17 @@
               <p>WebVR Polyfill</p>
             </div>
           </div>
+          <aside class="notes">
+            <ul>
+              <li>Edge Windows and Mixed Reality devices & desktop</li>
+              <li>Chrome on Android and Daydream & Cardboard</li>
+              <li>Firefox 55 Web and HTC Vive & Oculus</li>
+              <li>Chromium HTC Vive & Oculus Rift</li>
+              <li>SI Samsung Galaxy (Cardboard) and Gear VR</li>
+              <li>Oculus Carmel Samsung Gear VR</li>
+              <li>Servo on HTC Vive</li>
+            </ul>
+          </aside>
         </section>
         <section>  <!-- On different devices -->
           <h2>Supported devices</h2>
@@ -251,12 +262,12 @@
           <h2>Positioning &amp; Rotation</h2>
           <p>Right-handed coordinate system</p>
           <img src="./lib/img/right-handed.jpg" />
-          <div><small>Image from http://what-when-how.com/</small></div>
+          <div class="small">Image from http://what-when-how.com/</div>
         </section>
         <section>
           <h2>Position component</h2>
           <img src="./lib/img/position.png" />
-          <div><small>Image from <a href="https://commons.wikimedia.org/wiki/File:3D_coordinate_system.svg" target="blank">Wikimedia Commons</a></small></div>
+          <div class="small">Image from <a href="https://commons.wikimedia.org/wiki/File:3D_coordinate_system.svg" target="blank">Wikimedia Commons</a></div>
         </section>
         <section>
           <h2>Position component</h2>
@@ -324,18 +335,35 @@
             <li>Flat images &amp; videos</li>
             <li>You can use it on all geometries</li>
           </ul>
-            <pre  class="fragment fade-up" data-fragment-index="4" class="fragment fade-up"><code data-trim>
-            <a-entity material="src: not/power/of/two.jpg; npot: true"></a-entity>
-            </code></pre>
         </section>
         <section>
-          <h2 class="fragment highlight-current-red" data-fragment-index="1">The power of two</h2>
+            <h3>360 video</h3>
+            <pre><code data-trim>
+            <a-scene>
+              <!-- or use a equirectangular image -->
+              <a-sky src="path/360-video.mp4"></a-sky>
+            </a-scene>
+            </code></pre>
+            <iframe allowfullscreen src="embeds/example-360-video.html" class="stretch"></iframe>
+        </section>
+        <section>
+            <h3>Images &amp; tiled images</h3>
+            <pre><code data-trim>
+            <a-plane src="path/image.jpg" width="4" height="2"></a-plane>
+            <!-- tiled background -->
+            <a-entity material="src: tile.gif; repeat: 2 2" geometry="primitive: plane: width: 2; height: 2">
+            </a-entity>
+            </code></pre>
+            <iframe allowfullscreen src="embeds/example-tiles-images.html" class="stretch"></iframe>
+        </section>
+        <section>
+          <h2 class="fragment highlight-current-red grow" data-fragment-index="1">The power of two</h2>
           <img  class="fragment fade-up" data-fragment-index="1"src="lib/img/error-powerof2.png" alt="power of 2 error" />
           <ul>
             <li class="fragment fade-up" data-fragment-index="2">WebGL expects images to be the power of two</li>
             <li class="fragment fade-up" data-fragment-index="3">2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096</li>
             <li class="fragment fade-up" data-fragment-index="4">If you can't change the ratio / size, use the <span class="highlight-white-permanent">npot</span> attribute of the material component</li>
-            <li class="fragment fade-up" data-fragment-index="5">Always use "power of two" images for tiles</li>
+            <li class="fragment fade-up" data-fragment-index="5">Always use "power of two" images for tiles (repeat)</li>
           </ul>
           <pre  class="fragment fade-up" data-fragment-index="4" class="fragment fade-up"><code data-trim>
           <a-entity material="src: not/power/of/two.jpg; npot: true"></a-entity>
@@ -403,9 +431,18 @@
         <section>
           <h2>Animations</h2>
           <ul>
-            <li>Animation component and ...</li>
-            <li>...</li>
+            <li>You can animate different properties and types</li>
+            <li>Rotation, position, color, opacity, radius, scale ...</li>
+            <li>Speed, easing, repeat, direction...</li>
+            <li>Attach <code>&lt;a-animation&gt;</code> component as a child</li>
           </ul>
+          <pre><code data-trim>
+          <a-sphere>
+              <a-animation></a-animation>
+          </a-sphere>
+          </code></pre>
+          <p>Also check out the
+<a href="https://github.com/ngokevin/kframe/tree/master/components/animation/" target="_blank" rel="external">aframe-animation-component</a></p>
       </section>
         <section>
           <h2>Animations</h2>
@@ -531,7 +568,11 @@
       </section>
       <section>
         <span class="highlight-red">slide SD</span>
-          <h2>Interactions</h2>
+          <h2>Interact with a scene</h2>
+          <ul>
+            <li></li>
+          </ul>
+          <p>Write </p>
           <p> // info different controllers</p>
           <p> // example with look-controls</p>
       </section>
@@ -543,13 +584,14 @@
           Click lesson
       </section>
       <section>
-        <span class="highlight-red">slide AC</span>
-          <h2>Goodbye</h2>
+          <h2>Thank's for your time.</h2>
+          <h3>Keep on building!</h3>
       </section>
 
       <section>
           <h2>Further reading</h2>
           <ul class="arrow-list">
+            <li><a href="https://webvr.rocks/" target="_blank">Check Browser support on https://webvr.rocks/</a></li>
             <li><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection of resources</a></li>
             <li><a href="https://aframe.io/aframe-school/" target="blank" title="aframe school">A-Frame School - An interactive course for WebVR</a></li>
           </ul>

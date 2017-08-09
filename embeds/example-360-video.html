@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>3D Objects</title>
+        <meta name="description" content="3D Objects">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <script src="js/aframe.min.js"></script>
+    </head>
+    <body>
+      <a-scene vr-mode-ui="enabled: false">
+          <a-assets>
+             <a-video crossorigin="anonymous" id="city" src="assets/city.mp4"></a-video>
+          </a-assets>
+          <a-sky src="#city"></a-sky>
+        </a-scene>
+    </body>
+</html>
