@@ -27,16 +27,18 @@
       <div class="slides">
         <section>
           <h1>A-Frame Beginners Workshop</h1>
-          <p>An introduction to WebVR</p>
+          <p style="margin-bottom: 60px;">An introduction to WebVR</p>
+          <p class="small">Berlin - 10.08.2017</p>
+          <p class="small">By Andrès Cuervo &amp; Stefanie Doll</p>
         </section>
-        <section>
-          <span class="highlight-red">Styling SD</span>
-          <h2>WebVR API</h2>
-          <ul>
+        <section data-background-image="./lib/img/vr.png"
+        data-background-position="bottom right">
+          <h1>WebVR API</h1>
+          <ul style="margin-bottom: 80px;max-width: 70%; padding-right: 50px;">
             <li>Detect VR devices and query their capabilities</li>
             <li>Check if the device supports the presentation mode</li>
             <li>Poll the device’s position and orientation</li>
-            <li>Display and re-render imagery on the device</li>
+            <li>Display and re-render imagery<br /> on the device</li>
           </ul>
         </section>
         <section>
@@ -60,67 +62,111 @@
             </div>
           </div>
           <div  class="flex-row image-icons">
-            <div class="fade-up">
+            <div>
               <img src="./lib/img/samsung-browser.png">
               <p>Samsung Internet</p>
             </div>
-            <div class="fade-up">
+            <div>
               <img src="./lib/img/carmel.png">
               <p>Oculus Carmel</p>
             </div>
-            <div class="fade-up">
+            <div>
               <img src="./lib/img/servo.png">
               <p>Servo</p>
             </div>
-            <div class="fade-up">
+            <div class="fragment fade-up">
               <img src="./lib/img/google-cardboard.png">
               <p>WebVR Polyfill</p>
             </div>
           </div>
         </section>
-        <section>
-          <span class="highlight-red">Styling SD</span>
-          <h2>Other Browser API's involved</h2>
-          <div class="flex-row flex-space ">
-            <ul>
-              <li>WebVR API</li>
-              <li>WebGL API</li>
-              <li>Gamepad API</li>
-            </ul>
-            <ul>
-              <li>WebAudio API</li>
-              <li>WebRTC API</li>
-              <li>Geolocation API</li>
-            </ul>
+        <section>  <!-- On different devices -->
+          <h2>Supported devices</h2>
+          <div class="fragment fade-up flex-row image-icons image-icons-big">
+            <div>
+              <img data-src="./lib/img/oculus-rift.png">
+              <p>VR Headsets</p>
+            </div>
+            <div>
+              <img data-src="./lib/img/google-cardboard.png">
+              <p>Mobile Phone &amp;<br>Cardboard</p>
+            </div>
+            <div>
+              <img data-src="./lib/img/tablet.png">
+              <p>Tablets</p>
+            </div>
+            <div>
+              <img data-src="./lib/img/desktop.png">
+              <p>Desktop</p>
+            </div>
           </div>
-          <p>and more...</p>
+          <aside class="notes">
+            <p>With WebVR, you don't produce VR content for a certian device, the VR content just matches the device you're using</p>
+          </aside>
         </section>
-        <section>
-          <h2>A-Frame</h2>
+        <section>  <!-- other web API's -->
+          <h2>Other Browser API's involved</h2>
+          <div class="fragment fade-up flex-row flex-row-flex image-icons image-icons-big" data-fragment-index="1">
+            <div>
+              <img data-src="./lib/img/webgl.png">
+              <p>WebGL</p>
+            </div>
+            <div>
+              <img data-src="./lib/img/webaudio.png">
+              <p>Web Audio</p>
+            </div>
+            <div>
+              <img data-src="./lib/img/gamepad.png">
+              <p>Gampad</p>
+            </div>
+            <div>
+              <img data-src="./lib/img/speech.png">
+              <p>Speech</p>
+            </div>
+            <div class="fragment fade-up" data-fragment-index="2">
+              <img data-src="./lib/img/webrtc.png">
+              <p>WebRTC</p>
+            </div>
+            <div class="fragment fade-up" data-fragment-index="2" >
+              <img data-src="./lib/img/geo.svg">
+              <p>Geolocation</p>
+            </div>
+          </div>
+            <p>and more...</p>
+        </section>
+        <section class="dark-font" data-background-image="./lib/img/aframe.png"
+        data-background-position="left" data-background-transition="slide">
+          <h1>A-Frame</h1>
           <h3>Is a javascript framework for building VR experiences on the web.</h3>
           <ul class="fragment fade-up">
-            <li class="fragment fade-up">It's cross-platform ...</li>
-            <li class="fragment fade-up">easy to use ...</li>
-            <li class="fragment fade-up">and easy to extend!</li>
+            <li>It's cross-platform ...</li>
+            <li>easy to use ...</li>
+            <li>and easy to extend!</li>
           </ul>
         </section>
 
         <section>
           <h2>Entity-Component-System</h2>
-          <p><span class="highlight-white-permanent">Entity</span> is an empty container <code>&lt;a-entity&gt;</code></p>
-          <p><span class="highlight-white-permanent">Components</span> add a certain apperance, behaviour and/or functionality</p>
+          <p  class="fragment fade-up"><span class="highlight-white-permanent">Entity</span> is an empty container <span class="fragment fade-up">
+            <span class="small icon-arrow-right"></span> <code>&lt;a-entity&gt;</code>
+          </span>
+          </p>
+          <p  class="fragment fade-up"><span class="highlight-white-permanent">Components</span> add a certain apperance, behaviour and/or functionality</p>
+          <p  class="fragment fade-up"><span class="highlight-white-permanent">System</span> provides the global scope
+          <span class="fragment fade-up">
+            <span class="small icon-arrow-right"></span> <code>&lt;a-scene &gt;</code></p>
+          </span>
           <br />
-          <pre><code data-trim >
+          <pre  class="fragment fade-up"><code data-trim >
             Entity Box = Geometry + Material + Position
 
             Entity Ball = Geometry + Material + Position + Velocity + Physics
           </code></pre>
         </section>
         <section>
-          <span class="highlight-red">Styling SD</span>
           <h2>&lt;a-scene&gt;</h2>
           <p>Setup of repetitive tasks &amp; components needed</p>
-          <ul class="fragment fade-up">
+          <ul class="fragment fade-up list-box">
             <li>WebGL &amp; WebVR setup</li>
             <li>Canvas setup</li>
             <li>Default camera &amp; lightning</li>
@@ -132,16 +178,18 @@
         </section>
         <section>
           <h2>Entities, components and primitives</h2>
-          <p>Entities and components</p>
-          <pre><code data-trim >
-            <a-entity component1="attribute: value" component2="attribute: value">
-            </a-entity>
+          <div  class="fragment fade-up">
+            <h4>Entities and components</h4>
+            <pre><code data-trim >
+              <a-entity component1="attribute: value" component2="attribute: value">
+              </a-entity>
 
-            <!-- adding a box -->
-            <a-entity geometry="primitive: box" material="color:red"></a-entity>
-          </code></pre>
-          <p>Primitives</p>
-          <pre><code data-trim >
+              <!-- adding a box -->
+              <a-entity geometry="primitive: box" material="color:red"></a-entity>
+            </code></pre>
+          </div>
+          <h4 class="fragment fade-up">Primitives</h4>
+          <pre  class="fragment fade-up"><code data-trim >
             <!-- adding a box as a primitive -->
             <a-box color="red"></a-box>
           </code></pre>
@@ -156,10 +204,16 @@
         </section>
 
         <section>
-          <h1>Go to</h1>
-          <h3 class="lowercase">https://aframe.glitch.me</h3>
-          <p>And remix the project</p>
-
+          <h2>Go to:</h2>
+          <p><a href="https://berlin-aframe-workshop.glitch.me/">https://berlin-aframe-workshop.glitch.me/</a></p>
+          <p>and click on the link for <span class="highlight-white-permanent">Lesson 1</span>.</p>
+          <div class="flex-container flex-half">
+            <div style="width: 30%">
+            <img src="./lib/img/glitch2.jpg">
+            </div>
+            <div  style="width: 63%">
+            <img src="./lib/img/glitch3.jpg">
+          </div>
         </section>
 
         <section>
@@ -224,8 +278,7 @@
           <img src="./lib/img/rotation.png" />
         </section>
 
-<section>
-  <span class="highlight-red">Styling SD</span>
+        <section>
           <h2>Positioning &amp; Rotation</h2>
           <p data-markdown>
               #### Some other things to know:
@@ -272,16 +325,18 @@
           </div>
           <iframe allowfullscreen src="embeds/animation-example.html" class="stretch"></iframe>
       </section>
-      <section data-markdown>
-          <script type="text/template">
+      <section>
             <span class="highlight-red">Slide SD</span>
-              ## Images and Videos as material
-              - 360 videos
-              - equirectangular images
-              - Texture/ Tiles
-              ![power of 2 error](lib/img/error-powerof2.png "power of 2 error")
+              <h2>Images and Videos as material</h2>
+              <ul class="list-box">
+                <li>360 videos<li>
+                <li>equirectangular images</li>
+                <li>Texture/ Tiles</li>
+              </ul>
+              <img class="fragment fade-up" src="lib/img/error-powerof2.png" alt="power of 2 error" />
               npot
-              <p>2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096</p>
+
+              <p class="small fragment fade-up">2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096</p>
           </script>
       </section>
       <section data-markdown>

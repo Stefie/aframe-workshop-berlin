@@ -14,6 +14,7 @@
 // Include theme-specific fonts
 @import url(../../lib/font/league-gothic/league-gothic.css);
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url(../../lib/font/icons/style.css);
 
 /**
  * Solarized colors by Ethan Schoonover
@@ -30,15 +31,16 @@ $base0:    #657b83;
 $base00:     #839496;
 $base01:     #93a1a1;
 $base02:     lighten(#93a1a1, 30%);
-$base03:     lighten(#93a1a1, 37%);
+$base03:     lighten(#93a1a1, 35%);
 $yellow:    #b58900;
 $orange:    #cb4b16;
-$red:       #dc322f;
+$red:       #990C19;
 $magenta:   #d33682;
 $violet:    #6c71c4;
 $blue:      #268bd2;
 $cyan:      #2aa198;
 $green:     #859900;
+$green-highlight: #086E3D;
 
 // Override theme settings (see ../template/settings.scss)
 $mainColor: $base1;
@@ -68,6 +70,16 @@ $selectionBackgroundColor: $magenta;
     }
     &.flex-space {
       justify-content: space-around;
+    }
+    &.flex-row-flex.image-icons {
+      > div {
+        padding: 20px;
+        min-width: auto;
+        img {
+          width: 100px;
+          padding: 5px;
+        }
+      }
     }
   }
 .flex-container {
@@ -117,6 +129,56 @@ $selectionBackgroundColor: $magenta;
   	opacity: 1;
   	visibility: inherit;
   }
+  ul {
+    max-width: 80%;
+    font-size: 0.8em;
+    list-style-type: none;
+    padding: 10px 0 20px 60px;
+    margin: 0;
+    &.list-box {
+      padding: 20px 20px 20px 60px;
+      background: #fff;
+      border: 1px solid $base02;
+      box-shadow: inset 0 0 10px $base00;
+    }
+    > li {
+      position: relative;
+      margin-bottom: 8px;
+      &:before {
+        height: 30px;
+        position: absolute;
+        left: -20px;
+        top: 6px;
+        content: '';
+        border-left: 5px solid $blue;
+      }
+      &.arrow-list:before {
+        left: -40px;
+        top: 10px;
+        font-family: 'icomoon' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\e900";
+        font-size: 0.8em;
+        padding-right: 20px;
+      }
+    }
+  }
+  small {
+    font-size: 0.8em;
+  }
+  .small {
+    font-size: 0.6em;
+    line-height: 0.7em;
+  }
  .slides section .fragment.highlight-white.visible,
  .slides section .highlight-white-permanent {
 	  color: $base3;
@@ -124,6 +186,11 @@ $selectionBackgroundColor: $magenta;
     &.upper {
       text-transform: uppercase;
       font-weight: normal;
+    }
+  }
+  .dark-font {
+    h1, h2, h3, h4, p, ul, li {
+      color: #000;
     }
   }
 }
