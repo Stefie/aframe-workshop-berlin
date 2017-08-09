@@ -306,11 +306,16 @@
         </section>
         <section  class="light-font" data-background-color="#2aa198" data-markdown>
           <script type="text/template">
-            <span class="highlight-red">Slide AC</span>
-            ## Lesson 1
-              // instructions primitives to geometries
-              // Add new entities
-              //
+            <span class="highlight-red">Slide AC -- should we have everyone just
+                go to https://glitch.com/~berlin-aframe-workshop at the
+                beginning, so they can just follow along in their own remixed
+                version?</span>
+            ## Remix [Lesson 1 — Working with Primitives](https://glitch.com/~berlin-aframe-workshop)
+
+            ### Tasks:
+
+            - Convert these primitives from their shorthand syntax into a-entities that use `geometry=""`.
+            - Also, add one more type of geometry from the scene, it can be any of the [built in geometries](https://aframe.io/docs/0.6.0/components/geometry.html#built-in-geometries)
           </script>
         </section>
         <section>
@@ -416,23 +421,17 @@
 
         <iframe allowfullscreen src="embeds/astronaut-in-space.html" class="stretch"></iframe>
       </section>
-      <section>
-          <span class="highlight-red">slide AC</span>
-          <h2>Using built-in components</h2>
-          <ul>
-              <li>included in a-frame.js</li>
-              <li>see A-Frame docs</li>
-              <li>// examples</li>
-          </ul>
-      </section>
-      <section>
-        <span class="highlight-red">slide AC</span>
-          <h2>Using community components</h2>
-          <ul>
-              <li>Include in html-header via script-tag</li>
-              <li>Or install with npm install component-name</li>
-              <li>See github pages fo usage</li>
-          </ul>
+      <section data-markdown>
+          ### slide AC
+          ## Using built-in components
+
+          - These are included in the A-Frame source by default.
+          - See [A-Frame docs](https://aframe.io/docs/0.5.0/core/component.html) for more info on built-in components
+          - You've already used some built-in components!
+            - `geometry`
+            - `position`
+            - `material`
+            - `color`
       </section>
 
       <section>
@@ -446,7 +445,13 @@
               <p class="fragment fade-up" data-markdown>Allows you to define more complicated behavior to make custom interactions, materials, & more!</p>
           </div>
 
-          <aside class="notes"></aside>
+          <aside class="notes" data-markdown>
+           Pattern:
+
+           - `a-box` = `geometry="primitive: box"`
+           - `color` = `material="color: red"`
+           - You can use components to wrap other A-Frame functionality an behavior!
+          </aside>
       </section>
 
 
@@ -485,11 +490,40 @@
           <iframe allowfullscreen src="embeds/component-example.html" class="stretch"></iframe>
       </section>
 
-      <section  class="light-font" data-background-color="#2aa198">
+      <section  data-markdown class="light-font">
+        ## slide AC
 
-        <span class="highlight-red">Slide AC</span>
-          <h2>Lesson 3</h2>
-          - either use build-in component, community component or write your own
+        ## Using community components
+
+        - Include in HTML `head` via a `script` tag
+            - ![Example of including A-Frame via  a script tag like so: &lt;script src=&quot;https://aframe.io/releases/0.6.0/aframe.min.js&quot;&gt;&lt;/script&gt;](https://cdn.glitch.com/ba228382-1e08-4b86-81f9-71ef77a6fd93%2FScreen%20Shot%202017-08-09%20at%203.17.42%20PM.png?1502284677589)
+        - Or install with `npm install component-name`
+        - See components' Github pages fo usage
+        - Example components:
+            - [Physics system using Cannon.js](https://github.com/donmccurdy/aframe-physics-system)
+            - [Particle system](https://github.com/IdeaSpaceVR/aframe-particle-system-component)
+            - [Custom vertex displacement](https://glitch.com/edit/#!/aframe-displacement-shader)
+      </section>
+
+      <section data-markdown>
+          ### Slide AC
+
+          ## Adding Registry components with the A-Frame inspector
+
+
+          - The inspector is tied to a curated selection of community components called the [ A-Frame Registry ](https://aframe.io/aframe-registry/)
+          - Example: let's add physics to [the Hello A-Frame scene](https://aframe.glitch.me)!
+      </section>
+
+      <section data-markdown>
+          ### Slide AC
+
+          ## Lesson 3
+
+          - Either:
+          - Use a built-in component
+          - A community component
+          - Or, write your own little component
       </section>
       <section>
         <span class="highlight-red">slide SD</span>
@@ -513,7 +547,7 @@
           <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on rssources</a></p>
       </section>
       <section>
-          <h2>Ressouces</h2>
+          <h2>Resouces</h2>
           <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on resources</a></p>
           <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on resources</a></p>
       </section>
