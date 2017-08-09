@@ -315,15 +315,28 @@
         </section>
         <section>
           <h2>Images and Videos as material</h2>
+          <p>Use the 'src' attribute of the material component</p>
           <ul class="list-box">
-            <li>360 videos<li>
-            <li>equirectangular images</li>
-            <li>Texture/ Tiles</li>
+            <li>360 videos, equirectangular images</li>
+            <li>Flat images &amp; videos</li>
+            <li>You can use it on all geometries</li>
           </ul>
-          <img class="fragment fade-up" src="lib/img/error-powerof2.png" alt="power of 2 error" />
-          npot
-
-          <p class="small fragment fade-up">2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096</p>
+            <pre  class="fragment fade-up" data-fragment-index="4" class="fragment fade-up"><code data-trim>
+            <a-entity material="src: not/power/of/two.jpg; npot: true"></a-entity>
+            </code></pre>
+        </section>
+        <section>
+          <h2 class="fragment highlight-current-red" data-fragment-index="1">The power of two</h2>
+          <img  class="fragment fade-up" data-fragment-index="1"src="lib/img/error-powerof2.png" alt="power of 2 error" />
+          <ul>
+            <li class="fragment fade-up" data-fragment-index="2">WebGL expects images to be the power of two</li>
+            <li class="fragment fade-up" data-fragment-index="3">2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096</li>
+            <li class="fragment fade-up" data-fragment-index="4">If you can't change the ratio / size, use the <span class="highlight-white-permanent">npot</span> attribute of the material component</li>
+            <li class="fragment fade-up" data-fragment-index="5">Always use "power of two" images for tiles</li>
+          </ul>
+          <pre  class="fragment fade-up" data-fragment-index="4" class="fragment fade-up"><code data-trim>
+          <a-entity material="src: not/power/of/two.jpg; npot: true"></a-entity>
+          </code></pre>
         </section>
         <section>
           <h2>Importing 3D objects</h2>
@@ -365,6 +378,7 @@
         </section>
         <section>
           <h2>Assets &amp; Mixins – Code example</h2>
+          <p class="small">The ID of the asset or mixin is used as a refenrence on the entity.</p>
           <pre><code data-trim>
           <a-scene>
             <a-assets>
