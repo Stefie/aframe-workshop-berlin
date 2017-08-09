@@ -369,6 +369,12 @@ body {
       top: 6px;
       content: '';
       border-left: 5px solid #268bd2; }
+    .reveal ul > li > ul > li img {
+      margin: 0; }
+    .reveal ul > li > ul > li:before {
+      display: none; }
+  .reveal ul.list-blank li:before {
+    display: none; }
   .reveal ul.arrow-list li:before {
     border-left: none;
     left: -40px;
@@ -407,5 +413,8 @@ body {
 .reveal .dark-font h1, .reveal .dark-font h2, .reveal .dark-font h3, .reveal .dark-font h4, .reveal .dark-font p, .reveal .dark-font ul, .reveal .dark-font li {
   color: #000; }
 
-.reveal .light-font h1, .reveal .light-font h2, .reveal .light-font h3, .reveal .light-font h4, .reveal .light-font p, .reveal .light-font ul, .reveal .light-font li, .reveal .light-font a {
+.reveal .light-font h1, .reveal .light-font h2, .reveal .light-font h3, .reveal .light-font h4, .reveal .light-font p, .reveal .light-font ul, .reveal .light-font li {
   color: #fff; }
+
+.reveal .light-font a {
+  color: #a3cfee; }

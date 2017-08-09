@@ -29,7 +29,7 @@
           <h1>A-Frame Beginners Workshop</h1>
           <p style="margin-bottom: 60px;">An introduction to WebVR</p>
           <p class="small">Berlin - 10.08.2017</p>
-          <p class="small">By Andrès Cuervo &amp; Stefanie Doll</p>
+          <p class="small">By Andrés Cuervo &amp; Stefanie Doll</p>
         </section>
         <section data-background-image="./lib/img/vr.png"
         data-background-position="bottom right">
@@ -205,8 +205,8 @@
 
         <section class="light-font" data-background-color="#2aa198">
           <h2>Lesson 1</h2>
-          <p>Go to: <a href="https://berlin-aframe-workshop.glitch.me/">https://berlin-aframe-workshop.glitch.me/</a></p>
-          <p>and click on the link for <span class="highlight-white-permanent">Lesson 1</span>.</p>
+          <p>Go to: <a href="https://glitch.com/~berlin-aframe-workshop" target="blank">https://glitch.com/~berlin-aframe-workshop</a><br />and click on the "Remix your own" button</p>
+          <p>Then click "Show live" in the upper left corner and click on <span class="highlight-white-permanent">Lesson 1</span>.</p>
           <div class="flex-container flex-half">
             <div style="width: 30%">
             <img src="./lib/img/glitch2.jpg">
@@ -306,11 +306,9 @@
         </section>
         <section  class="light-font" data-background-color="#2aa198" data-markdown>
           <script type="text/template">
-            <span class="highlight-red">Slide AC -- should we have everyone just
-                go to https://glitch.com/~berlin-aframe-workshop at the
-                beginning, so they can just follow along in their own remixed
-                version?</span>
-            ## Remix [Lesson 1 — Working with Primitives](https://glitch.com/~berlin-aframe-workshop)
+            ## Lesson 2
+            ### Go back to your remix of
+            #### [https://berlin-aframe-workshop.glitch.me/](https://berlin-aframe-workshop.glitch.me/)
 
             ### Tasks:
 
@@ -404,6 +402,13 @@
         </section>
         <section>
           <h2>Animations</h2>
+          <ul>
+            <li>Animation component and ...</li>
+            <li>...</li>
+          </ul>
+      </section>
+        <section>
+          <h2>Animations</h2>
           <div class="flex-container flex-half">
             <div>
               <img src="./lib/img/animation-rotation.png">
@@ -422,16 +427,19 @@
         <iframe allowfullscreen src="embeds/astronaut-in-space.html" class="stretch"></iframe>
       </section>
       <section data-markdown>
-          ### slide AC
+        <script type="text/template">
           ## Using built-in components
 
           - These are included in the A-Frame source by default.
-          - See [A-Frame docs](https://aframe.io/docs/0.5.0/core/component.html) for more info on built-in components
+          - See <a href="https://aframe.io/docs/0.5.0/core/component.html" target="_blank">A-Frame docs</a> for more info on built-in components
           - You've already used some built-in components!
-            - `geometry`
-            - `position`
-            - `material`
-            - `color`
+            <ul class="list-blank">
+              <li>`geometry`</li>
+              <li>`position`</li>
+              <li>`material`</li>
+              <li>`color`</li>
+          </ul>
+          </script>
       </section>
 
       <section>
@@ -490,9 +498,8 @@
           <iframe allowfullscreen src="embeds/component-example.html" class="stretch"></iframe>
       </section>
 
-      <section  data-markdown class="light-font">
-        ## slide AC
-
+      <section  data-markdown>
+        <script type="text/template">
         ## Using community components
 
         - Include in HTML `head` via a `script` tag
@@ -500,30 +507,27 @@
         - Or install with `npm install component-name`
         - See components' Github pages fo usage
         - Example components:
-            - [Physics system using Cannon.js](https://github.com/donmccurdy/aframe-physics-system)
-            - [Particle system](https://github.com/IdeaSpaceVR/aframe-particle-system-component)
-            - [Custom vertex displacement](https://glitch.com/edit/#!/aframe-displacement-shader)
+          - <a href="https://github.com/donmccurdy/aframe-physics-system" target="_blank">Physics system using Cannon.js</a>
+          - <a href="https://github.com/IdeaSpaceVR/aframe-particle-system-component" target="_blank">Particle system</a>
+          - <a href="https://glitch.com/edit/#!/aframe-displacement-shader" target="_blank">Custom vertex displacement</a>
+        </script>
       </section>
 
       <section data-markdown>
-          ### Slide AC
-
+        <script type="text/template">
           ## Adding Registry components with the A-Frame inspector
 
-
-          - The inspector is tied to a curated selection of community components called the [ A-Frame Registry ](https://aframe.io/aframe-registry/)
-          - Example: let's add physics to [the Hello A-Frame scene](https://aframe.glitch.me)!
+          - The inspector is tied to a curated selection of community components called the <a href="https://aframe.io/aframe-registry" target="_blank">A-Frame Registry</a>
+          - Example: let's add physics to the <a href="https://aframe.glitch.me" target="_blank">Hello A-Frame scene</a>!
+        </script>
       </section>
 
-      <section data-markdown>
-          ### Slide AC
+      <section data-markdown  class="light-font" data-background-color="#2aa198">
+        ## Examples Andrés
+          ## Lesson 4
 
-          ## Lesson 3
+          ### Use a community component
 
-          - Either:
-          - Use a built-in component
-          - A community component
-          - Or, write your own little component
       </section>
       <section>
         <span class="highlight-red">slide SD</span>
@@ -532,7 +536,10 @@
           <p> // example with look-controls</p>
       </section>
       <section  class="light-font" data-background-color="#2aa198">
-          <h2>Lesson 6</h2>
+          <p>https://github.com/ngokevin/aframe-event-set-component</p>
+      </section>
+      <section  class="light-font" data-background-color="#2aa198">
+          <h2>Lesson 5</h2>
           Click lesson
       </section>
       <section>
@@ -541,15 +548,27 @@
       </section>
 
       <section>
-        <span class="highlight-red">slide SD</span>
           <h2>Further reading</h2>
-          <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on resources</a></p>
-          <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on rssources</a></p>
+          <ul class="arrow-list">
+            <li><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection of resources</a></li>
+            <li><a href="https://aframe.io/aframe-school/" target="blank" title="aframe school">A-Frame School - An interactive course for WebVR</a></li>
+          </ul>
+          <h2>Community</h2>
+          <ul class="arrow-list">
+            <li><a href="https://aframevr-slack.herokuapp.com/" target="blank" title="A-Frame Slack">A-Frame Slack channel</a></li>
+            <li><a href="https://aframe.io/community/" target="blank" title="A-Frame community">A-Frame Community page</a></li>
+          </ul>
       </section>
       <section>
-          <h2>Resouces</h2>
-          <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on resources</a></p>
-          <p><a href="https://github.com/aframevr/awesome-aframe" target="blank" title="awesome-aframe">Awesome A-Frame - Collection on resources</a></p>
+          <h2>3D Models & Ressources</h2>
+          <ul class="arrow-list">
+            <li><a href="https://vr.google.com/objects">Google Blocks</a></li>
+            <li><a href="https://sketchfab.com">Sketchfab</a></li>
+            <li><a href="http://clara.io">Clara.io</a></li>
+            <li><a href="http://archive3d.net">Archive3D</a></li>
+            <li><a href="https://3dwarehouse.sketchup.com">Sketchup’s 3D Warehouse</a></li>
+            <li><a href="http://www.turbosquid.com/Search/3D-Models/free">TurboSquid</a></li>
+          </ul>
       </section>
   </div>
     </div>
