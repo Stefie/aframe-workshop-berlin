@@ -369,22 +369,24 @@ body {
       top: 6px;
       content: '';
       border-left: 5px solid #268bd2; }
-    .reveal ul > li.arrow-list:before {
-      left: -40px;
-      top: 10px;
-      font-family: 'icomoon' !important;
-      speak: none;
-      font-style: normal;
-      font-weight: normal;
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1;
-      /* Better Font Rendering =========== */
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      content: "\e900";
-      font-size: 0.8em;
-      padding-right: 20px; }
+  .reveal ul.arrow-list li:before {
+    border-left: none;
+    left: -40px;
+    top: 10px;
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: #268bd2;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e900";
+    font-size: 0.8em;
+    padding-right: 20px; }
 
 .reveal small {
   font-size: 0.8em; }
@@ -404,3 +406,6 @@ body {
 
 .reveal .dark-font h1, .reveal .dark-font h2, .reveal .dark-font h3, .reveal .dark-font h4, .reveal .dark-font p, .reveal .dark-font ul, .reveal .dark-font li {
   color: #000; }
+
+.reveal .light-font h1, .reveal .light-font h2, .reveal .light-font h3, .reveal .light-font h4, .reveal .light-font p, .reveal .light-font ul, .reveal .light-font li, .reveal .light-font a {
+  color: #fff; }

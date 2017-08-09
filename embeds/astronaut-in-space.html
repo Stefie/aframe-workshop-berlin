@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Astronaut in space</title>
+        <meta name="description" content="Material & Animations">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <script src="js/aframe.min.js"></script>
+    </head>
+    <body>
+      <a-scene vr-mode-ui="enabled: false">
+          <a-assets>
+            <img id="space" crossorigin="anonymous" src="assets/space.jpg" />
+            <img id="earth" crossorigin="anonymous" src="assets/earth_clouds.jpg" />
+             <a-asset-item crossorigin="anonymous" id="astronaut-obj" src="assets/acesjustforroomshow.obj"></a-asset-item>
+            <a-asset-item crossorigin="anonymous" id="astronaut-mtl" src="assets/acesjustforroomshow.mtl"></a-asset-item>
+          </a-assets>
+
+          <a-sphere position="0 0 -15" src="#earth" radius="5">
+            <a-animation attribute="rotation" from="0 0 0" to="0 360 0" easing="linear" dur="30000" repeat="indefinite"></a-animation>
+            <a-entity obj-model="obj: #astronaut-obj; mtl: #astronaut-mtl" scale="0.4 0.4 0.4" position="-12 0 0"></a-entity>
+          </a-sphere>
+          <a-sky src="#space"></a-sky>
+
+        </a-scene>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>3D Objects</title>
+        <meta name="description" content="3D Objects">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <script src="js/aframe.min.js"></script>
+    </head>
+    <body>
+      <a-scene vr-mode-ui="enabled: false">
+          <a-assets>
+             <a-asset-item crossorigin="anonymous" id="sea-obj" src="assets/sea.obj"></a-asset-item>
+            <a-asset-item crossorigin="anonymous" id="sea-mtl" src="assets/sea.mtl"></a-asset-item>
+             <a-asset-item crossorigin="anonymous" id="squid-obj" src="assets/squid.obj"></a-asset-item>
+            <a-asset-item crossorigin="anonymous" id="squid-mtl" src="assets/squid.mtl"></a-asset-item>
+          </a-assets>
+          <a-entity obj-model="obj: #sea-obj; mtl: #sea-mtl" position="-1 1.6 -2.5"></a-entity>
+          <a-entity obj-model="obj: #squid-obj; mtl: #squid-mtl"  rotation="0 -10 30" position="2 1.6 -2.5">
+          </a-entity>
+          <a-sky color="#2aa198"></a-sky>
+
+        </a-scene>
+    </body>
+</html>

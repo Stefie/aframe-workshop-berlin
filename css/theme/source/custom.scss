@@ -152,24 +152,25 @@ $selectionBackgroundColor: $magenta;
         content: '';
         border-left: 5px solid $blue;
       }
-      &.arrow-list:before {
-        left: -40px;
-        top: 10px;
-        font-family: 'icomoon' !important;
-        speak: none;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-
-        /* Better Font Rendering =========== */
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        content: "\e900";
-        font-size: 0.8em;
-        padding-right: 20px;
-      }
+    }
+    &.arrow-list li:before {
+      border-left: none;
+      left: -40px;
+      top: 10px;
+      font-family: 'icomoon' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      color: $blue;
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e900";
+      font-size: 0.8em;
+      padding-right: 20px;
     }
   }
   small {
@@ -193,4 +194,9 @@ $selectionBackgroundColor: $magenta;
       color: #000;
     }
   }
+  .light-font {
+      h1, h2, h3, h4, p, ul, li, a {
+        color: #fff;
+      }
+    }
 }

@@ -203,9 +203,9 @@
           </script>
         </section>
 
-        <section>
-          <h2>Go to:</h2>
-          <p><a href="https://berlin-aframe-workshop.glitch.me/">https://berlin-aframe-workshop.glitch.me/</a></p>
+        <section class="light-font" data-background-color="#2aa198">
+          <h2>Lesson 1</h2>
+          <p>Go to: <a href="https://berlin-aframe-workshop.glitch.me/">https://berlin-aframe-workshop.glitch.me/</a></p>
           <p>and click on the link for <span class="highlight-white-permanent">Lesson 1</span>.</p>
           <div class="flex-container flex-half">
             <div style="width: 30%">
@@ -304,7 +304,7 @@
           </code></pre>
             <iframe allowfullscreen src="embeds/nested-position-example.html" class="stretch"></iframe>
         </section>
-        <section data-markdown>
+        <section  class="light-font" data-background-color="#2aa198" data-markdown>
           <script type="text/template">
             <span class="highlight-red">Slide AC</span>
             ## Lesson 1
@@ -314,57 +314,93 @@
           </script>
         </section>
         <section>
+          <h2>Images and Videos as material</h2>
+          <ul class="list-box">
+            <li>360 videos<li>
+            <li>equirectangular images</li>
+            <li>Texture/ Tiles</li>
+          </ul>
+          <img class="fragment fade-up" src="lib/img/error-powerof2.png" alt="power of 2 error" />
+          npot
+
+          <p class="small fragment fade-up">2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096</p>
+        </section>
+        <section>
+          <h2>Importing 3D objects</h2>
+          <p>You can use 3D-Objects in your A-Frame scenes.</p>
+          <p>Exports from Unity, Blender, Google Blocks, Sketchfab (...) and shared ressources.</p>
+          <h4 style="margin:30px 0 10px;">Suppoerted file-types</h4>
+          <ul class="arrow-list list-box">
+            <li>COLLADA files (.DAE)</li>
+            <li>GL Transmission Format (.glTF)</li>
+            <li>Wavefront (.obj &amp; .mtl)</li>
+          </ul>
+          <p class="small">Use together with the  <span class="highlight-white-permanent">scale component</span></p>
+        </section>
+        <section>
+          <h2>Example: Google Blocks Import</h2>
+          <pre><code data-trim>
+          <a-entity obj-model="obj: url(/path/model.obj); mtl: url(/path/model.mtl)">
+          </a-entity>
+          </code></pre>
+          <iframe allowfullscreen src="embeds/example-3d-objects.html" class="stretch"></iframe>
+          <p class="small">Models by <a href="https://vr.google.com/objects/4S9sJao2VRT" target="blank">"Anna dream brush"</a> &amp; <a href="https://vr.google.com/objects/bUjvcUjUIfi" target="blank">Timothy 'YM' Johnson
+</a></p>
+        </section>
+        <section>
+          <h2>Assets</h2>
+          <p class="small"><code>&lt;a-assets&gt;</code> – <code>&lt;a-assets-item&gt;</code></p>
+          <ul>
+            <li>A-Frame has a built-in Asset Management System</li>
+            <li>Better performance because of caching, preloading &amp; reuseability</li>
+            <li>Images, videos, 3D-Models, audio</li>
+          </ul>
+          <div class="fragment fade-up">
+            <h2>Mixins</h2>
+            <p class="small"><code>&lt;a-mixin&gt;</code></p>
+            <ul style="width: 80%">
+              <li>To reuse self-defined sets of component properties</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <h2>Assets &amp; Mixins – Code example</h2>
+          <pre><code data-trim>
+          <a-scene>
+            <a-assets>
+              <!-- Wavefront object model -->
+              <a-asset-item id="my-model-obj" src="model.obj"></a-asset-item>
+              <a-asset-item id="my-model-mtl" src="model.mtl"></a-asset-item>
+              <!-- An image -->
+              <img id="image-asset" src="my-image.png" />
+              <!-- A mixin -->
+              <a-mixin id="red" material="color: red; opacity: o.5"></a-mixin>
+            </a-assets>
+
+            <a-entity obj-model="obj: #my-model-obj; mtl: #my-model-mtl"></a-entity>
+            <a-plane src="#image-asset"></a-plane>
+            <a-sphere mixin="red"></a-sphere>
+          </a-scene>
+         </pre></code>
+        </section>
+        <section>
           <h2>Animations</h2>
           <div class="flex-container flex-half">
             <div>
-            <img src="./lib/img/animation-position.png" class="fragment fade-up">
+              <img src="./lib/img/animation-rotation.png">
             </div>
             <div>
-            <img src="./lib/img/animation-rotation.png" class="fragment fade-up">
-          </div>
+            <img src="./lib/img/animation-position.png">
+            </div>
           </div>
           <iframe allowfullscreen src="embeds/animation-example.html" class="stretch"></iframe>
       </section>
-      <section>
-            <span class="highlight-red">Slide SD</span>
-              <h2>Images and Videos as material</h2>
-              <ul class="list-box">
-                <li>360 videos<li>
-                <li>equirectangular images</li>
-                <li>Texture/ Tiles</li>
-              </ul>
-              <img class="fragment fade-up" src="lib/img/error-powerof2.png" alt="power of 2 error" />
-              npot
+      <section  class="light-font" data-background-color="#2aa198">
+        <h2>Lesson 3</h2>
+        <p>Try to rebuild this scene!</p>
+        <p class="small">Got back to the course overview and follow the links for <span class="highlight-white-permanent">Lesson 3.</span></p>
 
-              <p class="small fragment fade-up">2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096</p>
-          </script>
-      </section>
-      <section data-markdown>
-          <script type="text/template">
-            <span class="highlight-red">Slide SD</span>
-              ## Assets and mixins
-              - caching
-              - preloading
-              a-asset-item a-mixin
-          </script>
-      </section>
-      <section data-markdown>
-          <script type="text/template">
-            <span class="highlight-red">Slide SD</span>
-              ## Importing 3D objects
-              - 3D objects (.obj or .gltf)
-              - scaling problems
-          </script>
-      </section>
-      <section data-markdown>
-          <script type="text/template">
-            <span class="highlight-red">Slide SD</span>
-              ## Lesson 2
-              Go to:
-              - remix glitch again
-              - Links to assets
-              show them scene , rebuild
-          </script>
+        <iframe allowfullscreen src="embeds/astronaut-in-space.html" class="stretch"></iframe>
       </section>
       <section>
           <span class="highlight-red">slide AC</span>
@@ -435,7 +471,7 @@
           <iframe allowfullscreen src="embeds/component-example.html" class="stretch"></iframe>
       </section>
 
-      <section>
+      <section  class="light-font" data-background-color="#2aa198">
 
         <span class="highlight-red">Slide AC</span>
           <h2>Lesson 3</h2>
@@ -446,6 +482,10 @@
           <h2>Interactions</h2>
           <p> // info different controllers</p>
           <p> // example with look-controls</p>
+      </section>
+      <section  class="light-font" data-background-color="#2aa198">
+          <h2>Lesson 6</h2>
+          Click lesson
       </section>
       <section>
         <span class="highlight-red">slide AC</span>
