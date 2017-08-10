@@ -332,9 +332,35 @@
           </script>
         </section>
         <section>
+          <h2>Animations</h2>
+          <ul class="fragment fade-up">
+            <li>You can animate different properties and types</li>
+            <li class="fragment fade-up">Rotation, position, color, opacity, radius, scale ...</li>
+            <li class="fragment fade-up">Attributes: Speed, easing, repeat, direction...</li>
+            <li class="fragment fade-up">Attach <code>&lt;a-animation&gt;</code> component as a child</li>
+          </ul>
+          <pre class="fragment fade-up"><code data-trim>
+          <a-sphere>
+              <a-animation></a-animation>
+          </a-sphere>
+          </code></pre>
+      </section>
+        <section>
+          <h2>Animations</h2>
+          <div class="flex-container flex-half">
+            <div>
+              <img src="./lib/img/animation-rotation.png">
+            </div>
+            <div>
+            <img src="./lib/img/animation-position.png">
+            </div>
+          </div>
+          <iframe allowfullscreen src="embeds/animation-example.html" class="stretch"></iframe>
+      </section>
+        <section>
           <h2>Images and Videos as material</h2>
           <p>Use the 'src' attribute of the material component</p>
-          <ul class="list-box">
+          <ul class="list-box fragment fade-up">
             <li>360 videos, equirectangular images</li>
             <li>Flat images &amp; videos</li>
             <li>You can use it on all geometries</li>
@@ -365,7 +391,7 @@
           <img  class="fragment fade-up" data-fragment-index="1"src="lib/img/error-powerof2.png" alt="power of 2 error" />
           <ul>
             <li class="fragment fade-up" data-fragment-index="2">WebGL expects images to be the power of two</li>
-            <li class="fragment fade-up" data-fragment-index="3">2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096</li>
+            <li class="fragment fade-up" data-fragment-index="3">2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, ...</li>
             <li class="fragment fade-up" data-fragment-index="4">If you can't change the ratio / size, use the <span class="highlight-white-permanent">npot</span> attribute of the material component</li>
             <li class="fragment fade-up" data-fragment-index="5">Always use "power of two" images for tiles (repeat)</li>
           </ul>
@@ -375,15 +401,19 @@
         </section>
         <section>
           <h2>Importing 3D objects</h2>
+          <div class="fragment fade-up" >
           <p>You can use 3D-Objects in your A-Frame scenes.</p>
           <p>Exports from Unity, Blender, Google Blocks, Sketchfab (...) and shared ressources.</p>
+        </div>
+        <div class="fragment fade-up" >
           <h4 style="margin:30px 0 10px;">Suppoerted file-types</h4>
           <ul class="arrow-list list-box">
             <li>COLLADA files (.DAE)</li>
             <li>GL Transmission Format (.glTF)</li>
             <li>Wavefront (.obj &amp; .mtl)</li>
           </ul>
-          <p class="small">Use together with the  <span class="highlight-white-permanent">scale component</span></p>
+        </div>
+          <p class="small fragment fade-up">Use together with the  <span class="highlight-white-permanent">scale component</span></p>
         </section>
         <section>
           <h2>Example: Google Blocks Import</h2>
@@ -398,7 +428,7 @@
         <section>
           <h2>Assets</h2>
           <p class="small"><code>&lt;a-assets&gt;</code> – <code>&lt;a-assets-item&gt;</code></p>
-          <ul>
+          <ul class="fragment fade-up">
             <li>A-Frame has a built-in Asset Management System</li>
             <li>Better performance because of caching, preloading &amp; reuseability</li>
             <li>Images, videos, 3D-Models, audio</li>
@@ -428,38 +458,10 @@
 
             <a-entity obj-model="obj: #my-model-obj; mtl: #my-model-mtl"></a-entity>
             <a-plane src="#image-asset"></a-plane>
-            <a-sphere mixin="red"></a-sphere>
+            <a-sphere mixin="#red"></a-sphere>
           </a-scene>
          </pre></code>
         </section>
-        <section>
-          <h2>Animations</h2>
-          <ul>
-            <li>You can animate different properties and types</li>
-            <li>Rotation, position, color, opacity, radius, scale ...</li>
-            <li>Speed, easing, repeat, direction...</li>
-            <li>Attach <code>&lt;a-animation&gt;</code> component as a child</li>
-          </ul>
-          <pre><code data-trim>
-          <a-sphere>
-              <a-animation></a-animation>
-          </a-sphere>
-          </code></pre>
-          <p>Also check out the
-<a href="https://github.com/ngokevin/kframe/tree/master/components/animation/" target="_blank" rel="external">aframe-animation-component</a></p>
-      </section>
-        <section>
-          <h2>Animations</h2>
-          <div class="flex-container flex-half">
-            <div>
-              <img src="./lib/img/animation-rotation.png">
-            </div>
-            <div>
-            <img src="./lib/img/animation-position.png">
-            </div>
-          </div>
-          <iframe allowfullscreen src="embeds/animation-example.html" class="stretch"></iframe>
-      </section>
       <section  class="light-font" data-background-color="#2aa198">
         <h2>Lesson 3</h2>
         <p>Try to rebuild this scene!</p>
