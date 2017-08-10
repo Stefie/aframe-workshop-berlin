@@ -567,21 +567,87 @@
 
       </section>
       <section>
-        <span class="highlight-red">slide SD</span>
           <h2>Interact with a scene</h2>
-          <ul>
-            <li></li>
+          <ul class="fragment fade-up arrow-list">
+            <li>Large variety of platforms, devices &amp; input methods.</li>
+            <li class="fragment fade-up">Desktop computers, phones, VR Headsets, 3DoF, 6DoF</li>
+            <li class="fragment fade-up">Actions: Grab, throw, rub, flip, poke, stretch, press...</li>
+            <li class="fragment fade-up">11 built-in components for interactions in A-Frame</li>
+            <li class="fragment fade-up">...plus custom controllers</li>
           </ul>
-          <p>Write </p>
-          <p> // info different controllers</p>
-          <p> // example with look-controls</p>
       </section>
-      <section  class="light-font" data-background-color="#2aa198">
-          <p>https://github.com/ngokevin/aframe-event-set-component</p>
+      <section>
+          <h2>Built-in components</h2>
+          <span class="fragment fade-in">
+            <img src="./lib/img/controllers.png">
+          </span>
+      </section>
+      <section>
+          <h2>Built-in components</h2>
+            <img src="./lib/img/controllers-active.png">
+      </section>
+      <section>
+          <h2>Cursor component</h2>
+          <ul>
+            <li>Provides states on top of the raycaster component</li>
+            <li>click, fuse, mousedown, mouseenter, mouseleave, mouseup</li>
+            <li>Add your event listeners in Javascript</li>
+          </ul>
+          <iframe allowfullscreen src="embeds/cursor-example.html" class="stretch"></iframe>
+      </section>
+      <section>
+        <h2>Cursor component html</h2>
+          <pre><code data-trim>
+          <a-scene>
+
+              <a-sphere color="black" cursor-listener></a-sphere>
+
+              <!-- look-controls & wasd-controls are enabled per default -->
+              <a-camera>
+                <a-cursor></a-cursor>
+              </a-camera>
+
+          </a-scene>
+          </code></pre>
+      </section>
+      <section>
+        <h2>Cursor component Javascript</h2>
+        <pre><code data-trim>
+        <script>
+          AFRAME.registerComponent('cursor-listener', {
+            init: function () {
+              var COLORS = ['red', 'green', 'blue', 'yellow', 'orange', 'purple'];
+              this.el.addEventListener('click', function (evt) {
+                var randomIndex = Math.floor(Math.random() * COLORS.length);
+                this.setAttribute('material', 'color', COLORS[randomIndex]);
+              });
+            }
+          });
+        </script>
+        </code></pre>
+      </section>
+      <section>
+        <h2>Using the event-set component</h2>
+        <p class="small">Register event listeners without Javascript</p>
+        <a href="https://github.com/ngokevin/aframe-event-set-component" target="_blank" class="small">https://github.com/ngokevin/aframe-event-set-component</a>
+        <pre><code data-trim>
+        <a-scene>
+
+          <a-sphere color="black"
+                 event-set__1="_event: click; material.color: red; scale: 2 2 2"
+                 event-set__2="_event: mouseenter; material.color: blue"></a-sphere>
+
+          <a-camera>
+            <a-cursor></a-cursor>
+          </a-camera>
+
+        </a-scene>
+        </code></pre>
       </section>
       <section  class="light-font" data-background-color="#2aa198">
           <h2>Lesson 5</h2>
-          Click lesson
+          <h4>Go back to your remix of</h4>
+          <p>[https://berlin-aframe-workshop.glitch.me/](https://berlin-aframe-workshop.glitch.me/)</p>
       </section>
       <section>
           <h2>Thank's for your time.</h2>
