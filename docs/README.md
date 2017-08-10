@@ -25,9 +25,11 @@ Since we'll be using the online editor Glitch for this workshop, you won't need 
 **19:30** Workshop
 
 
+
 **What to bring:**
 
 A laptop
+
 
 
 **What you can bring:**
@@ -35,9 +37,12 @@ A laptop
 If you already have your own assets that you'd like to implement in a WebVR scene, just bring them along. Assets can be, for example,  images or videos shot with a 360 camera or 3D objects.
 
 
+
 **Read more about WebVR on https://webvr.info/**
 
 **Check out A-Frame on https://aframe.io/**
+
+
 
 
 This workshop is a community event kindly hosted by
